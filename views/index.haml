@@ -3,6 +3,13 @@
   %small= @subtitle
 
 #sidebar
+  %h2 About
+  %p
+    Effectif Development is the home of
+    = succeed "," do
+      %a{ :href => "/"} Graham Ashton
+    a freelance web developer and software engineer based in London.
+
   = haml :categories, :layout => false
   = haml :feed, :layout => false
 
