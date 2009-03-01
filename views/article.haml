@@ -6,14 +6,15 @@
     &gt;
   = @article.heading
 
-#sidebar
-  = haml :categories, :layout => false
-  = haml :feed, :layout => false
+%div#heading
+  %h1= @article.heading
+  %p
+    - if @article.date
+      = format_date(@article.date)
+    by Mike Stenhouse
 
 #content
-  - if @article.date
-    #date= format_date(@article.date)
-  ~ @article.to_html
+  ~ @article.body
 
   - unless @article.categories.empty?
     .categories
@@ -41,3 +42,8 @@
               #{comment.body}
       %p
         Comments are no longer allowed on articles.
+
+#sidebar
+  = haml :categories, :layout => false
+  = haml :feed, :layout => false
+

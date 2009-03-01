@@ -9,17 +9,31 @@
     %title= @title
     %link{ :href => "/css/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
     %link{ :href => "/articles.xml", :rel => "alternate", :type => "application/atom+xml" }
+    /%script{:src => "/syncotype.js", :type => "text/javascript"}
+
   %body{ :class => @body_class }
     #container
       #wrapper
+        #header
+          %ul.c
+            %li.home
+              %a{:href => "/"}
+                %img{:src => "/attachments/donotremove.gif", :alt => "Home"}/
+            %li
+              %a{:href => "/weblog"} Weblog
+            %li
+              %a{:href => "/portfolio"} Portfolio
+            %li
+              %a{:href => "/portfolio"} Projects
+            %li.contact
+              %a{:href => "/contact"} Contact
+            
         = yield
-
+        %div.clear
         #footer
           %p
             Powered by
-            = succeed "," do
+            = succeed "." do
               %a{ :href => "http://effectif.com/nesta" } nesta
-            designed by
-            %a{ :href => "http://effectif.com" } Graham Ashton
 
     = haml :analytics, :layout => false

@@ -23,6 +23,26 @@ module Nesta
       configuration["keywords"]
     end
     
+    def self.stylesheet
+      File.join(content_path, "skin", "master.sass")
+    end
+    
+    def self.skin(file)
+      File.join(content_path, "skin", file)
+    end
+    
+    def self.site_matcher
+      "/weblog"
+    end
+    
+    def self.categories_matcher
+      "/:permalink"
+    end
+    
+    def self.articles_matcher
+      "/weblog/:permalink"
+    end
+    
     def self.author
       configuration["author"]
     end
