@@ -1,0 +1,25 @@
+%div#heading
+  %h1= @title
+  %p UX, UI and Product Design, plus UI development
+
+#content
+  %table
+    %thead
+      %tr
+        %th{:class => "date"} Date
+        %th{:class => "client"} Client
+        %th{:class => "desc"} Description
+        %th{:class => "skills"} Skills
+    
+    %tbody
+      - @portfolio.each do |job|
+        %tr
+          %td{:class => "date"}= job[:date]
+          - parts = job[:name].split(", ")
+          %td{:class => "client weight3"}
+            = parts[0]
+            - if parts[1]
+              %small= parts[1]
+          %td{:class => "desc"}= job[:role]
+          %td{:class => "skills"}= job[:skills]
+        
