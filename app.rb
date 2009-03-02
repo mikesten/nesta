@@ -97,7 +97,9 @@ get "/portfolio" do
   @keywords = "web design, user experience design, user interface design, product design, html, xhtml, css, user interface development"
   @description = ""
   @portfolio = [
-    {:name => "SONAR Knowledge Map, Trampoline Systems", :date => "01/09", :role => "Head of User Experience", :skills => "Design, User Experience, Product Design, Strategy"},
+    {:name => "SONAR Knowledge Map, Trampoline Systems", :date => "04/09", :role => "Head of User Experience", :skills => "Design, User Experience, Product Design, Strategy"},
+    {:name => "Angry Natives", :date => "02/07", :role => "Designer and Developer", :skills => "Design, XHTML and CSS"},
+    {:name => "Gavin Stenhouse", :date => "01/07", :role => "Designer and Developer", :skills => "Design, XHTML and CSS"},
     {:name => "SONAR Dashboard, Trampoline Systems", :date => "09/07", :role => "Head of User Experience", :skills => "Design, User Experience, Product Design, Strategy"},
     {:name => "SONAR Flightdeck, Trampoline Systems", :date => "08/07", :role => "Head of User Experience", :skills => "Design, User Experience"},
     {:name => "SONAR Metascope, Trampoline Systems", :date => "06/07", :role => "Head of User Experience", :skills => "User Experience"},
