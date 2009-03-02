@@ -27,10 +27,6 @@ module Nesta
       File.join(content_path, "skin", "master.sass")
     end
     
-    def self.skin(file)
-      File.join(content_path, "skin", file)
-    end
-    
     def self.site_matcher
       "/weblog"
     end
