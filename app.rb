@@ -149,6 +149,12 @@ end
 get "/contact" do
   "Contact"
 end
+get "/me" do
+  "Me"
+end
+get "/projects" do
+  "Projects"
+end
 
 get Nesta::Configuration.site_matcher do
   set_common_variables

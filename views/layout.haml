@@ -33,7 +33,10 @@
         #footer
           %p
             Powered by
-            = succeed "." do
+            = succeed "," do
               %a{ :href => "http://effectif.com/nesta" } nesta
+            and built by
+            = succeed "." do
+              %a{ :href => "http://donotremove.co.uk/me" } Mike Stenhouse
 
     = haml :analytics, :layout => false
