@@ -4,6 +4,7 @@
 
 #content
   %table
+    %caption Speaking
     %thead
       %tr
         %th{:class => "date"} Date
@@ -12,7 +13,7 @@
         %th{:class => "skills"} Skills
     
     %tbody
-      - @portfolio.each do |job|
+      - @portfolio.select{|a| a[:kind] == :conference}.each do |job|
         %tr
           %td{:class => "date"}= job[:date]
           - parts = job[:name].split(", ")
@@ -23,3 +24,68 @@
           %td{:class => "desc"}= job[:role]
           %td{:class => "skills"}= job[:skills]
         
+        
+  %table
+    %caption Products
+    %thead
+      %tr
+        %th{:class => "date"} Date
+        %th{:class => "client"} Client
+        %th{:class => "desc"} Description
+        %th{:class => "skills"} Skills
+
+    %tbody
+      - @portfolio.select{|a| a[:kind] == :product}.each do |job|
+        %tr
+          %td{:class => "date"}= job[:date]
+          - parts = job[:name].split(", ")
+          %td{:class => "client weight3"}
+            = parts[0]
+            - if parts[1]
+              %small= parts[1]
+          %td{:class => "desc"}= job[:role]
+          %td{:class => "skills"}= job[:skills]
+
+
+
+  %table
+    %caption Websites
+    %thead
+      %tr
+        %th{:class => "date"} Date
+        %th{:class => "client"} Client
+        %th{:class => "desc"} Description
+        %th{:class => "skills"} Skills
+
+    %tbody
+      - @portfolio.select{|a| a[:kind] == :website}.each do |job|
+        %tr
+          %td{:class => "date"}= job[:date]
+          - parts = job[:name].split(", ")
+          %td{:class => "client weight3"}
+            = parts[0]
+            - if parts[1]
+              %small= parts[1]
+          %td{:class => "desc"}= job[:role]
+          %td{:class => "skills"}= job[:skills]
+
+  %table
+    %caption Training
+    %thead
+      %tr
+        %th{:class => "date"} Date
+        %th{:class => "client"} Client
+        %th{:class => "desc"} Description
+        %th{:class => "skills"} Skills
+
+    %tbody
+      - @portfolio.select{|a| a[:kind] == :training}.each do |job|
+        %tr
+          %td{:class => "date"}= job[:date]
+          - parts = job[:name].split(", ")
+          %td{:class => "client weight3"}
+            = parts[0]
+            - if parts[1]
+              %small= parts[1]
+          %td{:class => "desc"}= job[:role]
+          %td{:class => "skills"}= job[:skills]
