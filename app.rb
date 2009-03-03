@@ -155,13 +155,25 @@ get "/portfolio" do
   haml :portfolio
 end
 get "/contact" do
-  "Contact"
+  set_common_variables
+  @title = "Contact"
+  @keywords = ""
+  @description = ""
+  haml :contact
 end
 get "/me" do
-  "Me"
+  set_common_variables
+  @title = "Mike Stenhouse"
+  @keywords = ""
+  @description = ""
+  haml :me
 end
 get "/projects" do
-  "Projects"
+  set_common_variables
+  @title = "Projects"
+  @keywords = ""
+  @description = ""
+  haml :projects
 end
 
 get Nesta::Configuration.site_matcher do
