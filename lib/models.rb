@@ -82,12 +82,16 @@ class FileModel
     end
 end
 
+configure do
+  Cache = {}
+end
+
 class Article < FileModel
   include PageModel
   extend PageModel::ClassMethods
   
   def self.find_all
-    super.sort do |x, y|
+    Cache['find_all'] ||= super.sort do |x, y|
       if y.date.nil?
         -1
       elsif x.date.nil?

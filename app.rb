@@ -97,7 +97,7 @@ get "/portfolio" do
     {:name => "Tapping the Mainline, SHiFT 2008", :date => "09/08", :kind => :conference, :role => "Speaker", :skills => "Design and Psychology"},
     {:name => "From Ego to Ergo, Skillswap", :date => "07/08", :kind => :conference, :role => "Speaker", :skills => "Design and Psychology"},
     {:name => "But I'm a Bloody Designer, @media 2007", :date => "12/07", :kind => :conference, :role => "Speaker", :skills => "Design, Team Dynamics and Ruby"},
-    {:name => "Collective Intelligence, Indeterminacy and the Illusion of Control, ETech 2007", :date => "03/08", :kind => :conference, :role => "Speaker", :skills => "Product Design, Psychology"},
+    {:name => "Collective Intelligence Indeterminacy and the Illusion of Control, ETech 2007", :date => "03/08", :kind => :conference, :role => "Speaker", :skills => "Product Design, Psychology"},
     {:name => "Building Modern Webapps, The Spring Experience 2007", :date => "12/06", :kind => :conference, :role => "Speaker", :skills => "XHTML, CSS and Javascript"},
     {:name => "SONAR Knowledge Map, Trampoline Systems", :date => "04/09", :kind => :product, :role => "Head of User Experience", :skills => "Design, User Experience, Product Design, Strategy, Ruby"},
     {:name => "Out of Five", :date => "01/08", :kind => :product, :role => "Designer and Developer", :skills => "Design, XHTML, CSS, Ruby"},
