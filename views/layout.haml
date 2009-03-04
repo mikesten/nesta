@@ -20,13 +20,29 @@
               %a{:href => "/"}
                 %img{:src => "/attachments/donotremove-2.gif", :alt => "Home"}/
             %li
-              %a{:href => "/weblog"} Weblog
+              - if @nav && @nav == :weblog
+                %strong
+                  %a{:href => "/weblog"} Weblog
+              - else
+                %a{:href => "/weblog"} Weblog
             %li
-              %a{:href => "/portfolio"} Portfolio
+              - if @nav && @nav == :portfolio
+                %strong
+                  %a{:href => "/portfolio"} Portfolio
+              - else
+                %a{:href => "/portfolio"} Portfolio
             %li
-              %a{:href => "/projects"} Projects
+              - if @nav && @nav == :projects
+                %strong
+                  %a{:href => "/projects"} Projects
+              - else
+                %a{:href => "/projects"} Projects
             %li.contact
-              %a{:href => "/contact"} Contact
+              - if @nav && @nav == :contact
+                %strong
+                  %a{:href => "/contact"} Contact
+              - else
+                %a{:href => "/contact"} Contact
             
         = yield
         %div.clear
@@ -36,6 +52,6 @@
             %a{ :href => "http://effectif.com/nesta" } nesta
             and built by
             = succeed "." do
-              %a{ :href => "http://donotremove.co.uk/me" } Mike Stenhouse
+              %a{ :href => "http://donotremove.co.uk/me", :rel => "me" } Mike Stenhouse
 
     = haml :analytics, :layout => false
