@@ -10,5 +10,7 @@ set :run         => false,
     :public      => APP_ROOT + "/public"
  
 require File.join(APP_ROOT, "app.rb")
- 
-run Sinatra.application
+
+# map "/weblog" do 
+    run Sinatra.application
+# end

@@ -32,7 +32,7 @@ module Nesta
     end
     
     def self.categories_matcher
-      "/:permalink"
+      "/weblog/categories/:permalink"
     end
     
     def self.articles_matcher
