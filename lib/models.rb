@@ -90,6 +90,33 @@ class Article < FileModel
   include PageModel
   extend PageModel::ClassMethods
   
+  attr_accessor :per_page, :page, :count
+  def self.paginate(page)
+    @per_page = 20
+    @page = page.nil? ? 1 : page.to_i
+    start = (@page-1) * @per_page
+    finish = (start + @per_page) - 1
+    all = find_all
+    @count = all.size
+    all[start..finish]
+  end
+  
+  def self.page
+    @page
+  end
+  
+  def self.pages
+    @count / @per_page
+  end
+  
+  def self.previous?
+    @page > 1
+  end
+  
+  def self.next?
+    @count > (@page * @per_page) + @per_page
+  end
+  
   def self.find_all
     Cache['find_all'] ||= super.sort do |x, y|
       if y.date.nil?

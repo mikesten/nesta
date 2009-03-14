@@ -2,6 +2,7 @@ require "rubygems"
 require "sinatra"
 require 'sass'
 require 'haml'
+
 # require 'linguistics'
 # Linguistics::use( :en )
 
@@ -63,6 +64,14 @@ helpers do
   def format_date(date)
     date.strftime("%d %B %Y")
   end
+  
+  def pagination
+    out = []
+    out << "<a href='?page=#{Article.page - 1}'>Previous</a>" if Article.previous?
+    out << "Page #{Article.page} of #{Article.pages}"
+    out << "<a href='?page=#{Article.page + 1}'>Next</a>" if Article.next?
+    out.join(" | ")
+  end
 end
 
 not_found do
@@ -96,7 +105,8 @@ get Nesta::Configuration.site_matcher do
   @description = Nesta::Configuration.description
   @keywords = Nesta::Configuration.keywords
   @title = "#{@heading} - #{@subtitle}"
-  @articles = Article.find_all[0..7]
+  # @articles = Article.find_all[0..7]
+  @articles = Article.paginate(params[:page])
   @nav = :weblog
   cache haml(:index)
 end
