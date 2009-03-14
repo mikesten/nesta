@@ -11,7 +11,7 @@
     %link{ :href => "/articles.xml", :rel => "alternate", :type => "application/atom+xml" }
     /%script{:src => "/syncotype.js", :type => "text/javascript"}
 
-  %body{ :class => @body_class }
+  %body{ :class => "#{@body_class} #{internet_explorer_class}" }
     #container
       #wrapper
         #header

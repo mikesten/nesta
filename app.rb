@@ -72,6 +72,14 @@ helpers do
     out << "<a href='?page=#{Article.page + 1}'>Next</a>" if Article.next?
     out.join(" | ")
   end
+  
+  def internet_explorer_class
+    request.user_agent =~ /MSIE\s(\d)/
+    unless Regexp.last_match(1).nil?
+      # ie_version = Regexp.last_match(1).to_i
+      return "ie"
+    end
+  end
 end
 
 not_found do
