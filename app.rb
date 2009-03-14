@@ -51,6 +51,8 @@ helpers do
       base_url + article_path(page)
     elsif page.is_a?(Category)
       base_url + category_path(page)
+    elsif page.is_a?(String)
+      [base_url, page].join("/")
     else
       [base_url, page.permalink].join("/")
     end
