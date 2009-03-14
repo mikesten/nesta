@@ -33,14 +33,27 @@ helpers do
     # "/articles/#{article.permalink}"
   end
 
+  def articles_path
+    Nesta::Configuration.articles_matcher.gsub(/\/\:permalink/, "")
+  end
+
   def category_path(category)
     Nesta::Configuration.categories_matcher.gsub(/\:permalink/, category.permalink)
     # "/#{category.permalink}"
   end
   
+  def feed_url
+    "#{base_url}#{Nesta::Configuration.site_matcher}.xml"
+  end
+  
   def url_for(page)
-    base = page.is_a?(Article) ? base_url + "/articles" : base_url
-    [base, page.permalink].join("/")
+    if page.is_a?(Article)
+      base_url + article_path(page)
+    elsif page.is_a?(Category)
+      base_url + category_path(page)
+    else
+      [base_url, page.permalink].join("/")
+    end
   end
   
   def base_url
@@ -50,14 +63,15 @@ helpers do
   
   def nesta_atom_id_for_article(article)
     published = article.date.strftime('%Y-%m-%d')
-    "tag:#{request.host},#{published}:/articles/#{article.permalink}"
+    # "tag:#{request.host},#{published}:/articles/#{article.permalink}"
+    "tag:#{request.host},#{published}:#{article_path(article)}"
   end
   
   def atom_id(article = nil)
     if article
       article.atom_id || nesta_atom_id_for_article(article)
     else
-      "tag:#{request.host},2009:/articles"
+      "tag:#{request.host},2009:#{articles_path}"
     end
   end
   
@@ -141,7 +155,7 @@ get "/attachments/:filename.:ext" do
   send_file(file, :disposition => nil)
 end
 
-get "/articles.xml" do
+get "#{Nesta::Configuration.site_matcher}.xml" do
   content_type :xml, :charset => "utf-8"
   @title = Nesta::Configuration.title
   @subtitle = Nesta::Configuration.subtitle

@@ -8,7 +8,7 @@
       %meta{ "name" => "keywords", "content" => @keywords }
     %title= @title
     %link{ :href => "/css/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
-    %link{ :href => "/articles.xml", :rel => "alternate", :type => "application/atom+xml" }
+    %link{ :href => feed_url, :rel => "alternate", :type => "application/atom+xml" }
     /%script{:src => "/syncotype.js", :type => "text/javascript"}
 
   %body{ :class => "#{@body_class} #{internet_explorer_class}" }
