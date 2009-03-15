@@ -43,7 +43,8 @@ helpers do
   end
   
   def feed_url
-    "#{base_url}#{Nesta::Configuration.site_matcher}.xml"
+    # "#{base_url}#{Nesta::Configuration.site_matcher}.xml"
+    "http://feeds2.feedburner.com/donotremove"
   end
   
   def url_for(page)
