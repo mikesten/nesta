@@ -1,14 +1,14 @@
 
 get "/" do
   set_common_variables
-  @title = "Donotremove aka Mike Stenhouse :: UX, UI and Product Designer"
+  @title = "Donotremove, home of Mike Stenhouse :: UX, UI and Product Designer"
   @keywords = "web design, user experience design, user interface design, product design"
   @description = "This little corner of the interweb is occupied by Mike Stenhouse, a web developer and designer based in London."
   haml :home
 end
 get "/portfolio" do
   set_common_variables
-  @title = "Portfolio"
+  @title = "portfolio | donotremove"
   @keywords = "web design, user experience design, user interface design, product design, html, xhtml, css, user interface development"
   @description = ""
   @portfolio = [
@@ -72,7 +72,7 @@ get "/portfolio" do
 end
 get "/contact" do
   set_common_variables
-  @title = "Contact"
+  @title = "contact | donotremove"
   @keywords = ""
   @description = ""
   @nav = :contact
@@ -80,7 +80,7 @@ get "/contact" do
 end
 get "/me" do
   set_common_variables
-  @title = "Mike Stenhouse"
+  @title = "Mike Stenhouse | donotremove"
   @keywords = "Mike Stenhouse, Me, UX, UI, Design, About"
   @description = "Mike spent several years doing the rounds in various London agencies as a web standards and accessibility specialist, working for clients including Virgin, the BBC, PriceWaterhouse Coopers and Red Bull. In pursuit of a broader interest in how and why people use the web Mike settled into User Experience, helping to conceive and implement effective and usable interfaces for web applications."
   @about = ['twitter.com/mikesten', 'linkedin.com/in/mikestenhouse', 'slideshare.net/mikesten', 'github.com/mikesten', 'oo5.whatiminto.com/peeps/mikesten', 'flickr.com/mikesten', 'brightkite.com/people/mikesten', 'last.fm/user/mikesten', 'dopplr.com/traveller/mikesten'].sort
@@ -88,7 +88,7 @@ get "/me" do
 end
 get "/projects" do
   set_common_variables
-  @title = "Projects"
+  @title = "projects | donotremove"
   @keywords = ""
   @description = ""
   @nav = :projects

@@ -1,13 +1,18 @@
 .breadcrumb
   %a{ :href => "/" }= @site_title
 
+%div#heading
+  %h1 Sorry, something went wrong
+  %p Bang, crash, wallop.
+
+#content
+  %p
+    An error occurred whilst we were trying to serve your page. Please bear
+    with us, 
+    = succeed "," do
+      %a{:href => "mailto:#{Nesta::Configuration.author['email']}"} drop us a line
+    or in the mean time, try another page.
+  
 #sidebar
   = haml :categories, :layout => false
   = haml :feed, :layout => false
-
-#content
-  %h1 Sorry, something went wrong
-
-  %p
-    An error occurred whilst we were trying to serve your page. Please bear
-    with us, or in the mean time, try another page.

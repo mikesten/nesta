@@ -128,7 +128,7 @@ get Nesta::Configuration.site_matcher do
   @subtitle = Nesta::Configuration.subtitle
   @description = Nesta::Configuration.description
   @keywords = Nesta::Configuration.keywords
-  @title = "#{@heading} - #{@subtitle}"
+  @title = "#{@heading} | #{@subtitle}"
   # @articles = Article.find_all[0..7]
   @articles = Article.paginate(params[:page])
   @nav = :weblog
@@ -140,9 +140,9 @@ get Nesta::Configuration.articles_matcher do
   @article = Article.find_by_permalink(params[:permalink])
   raise Sinatra::NotFound if @article.nil?
   @title = if @article.parent
-    "#{@article.heading} - #{@article.parent.heading}"
+    "#{@article.heading} | #{@article.parent.heading}"
   else
-    "#{@article.heading} - #{Nesta::Configuration.title}"
+    "#{@article.heading} | #{Nesta::Configuration.title}"
   end
   @description = @article.description
   @keywords = @article.keywords

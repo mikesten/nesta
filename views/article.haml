@@ -11,7 +11,8 @@
   %p
     - if @article.date
       = format_date(@article.date)
-    by Mike Stenhouse
+    by 
+    = Nesta::Configuration.author['name']
 
 #content
   ~ @article.body
