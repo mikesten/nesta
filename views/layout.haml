@@ -10,9 +10,8 @@
     %link{ :href => "/css/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
     %link{ :href => feed_url, :rel => "alternate", :type => "application/atom+xml" }
     %link{ :href => url_for("favicon.ico"), :rel => "shortcut icon", :type => "image/x-icon" }/
+    %link{ :href => url_for("favicon.ico"), :rel => "icon", :type => "image/x-icon" }/
     
-    /%script{:src => "/syncotype.js", :type => "text/javascript"}
-
   %body{ :class => "#{@body_class} #{internet_explorer_class}" }
     #container
       #wrapper
@@ -54,6 +53,6 @@
             %a{ :href => "http://effectif.com/nesta" } nesta
             and built by
             = succeed "." do
-              %a{ :href => "http://donotremove.co.uk/me", :rel => "me" } Mike Stenhouse
+              %a{ :href => "/me", :rel => "me" } Mike Stenhouse
 
     = haml :analytics, :layout => false
