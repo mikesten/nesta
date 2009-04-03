@@ -7,11 +7,12 @@
 
 #content
   %p
-    An error occurred whilst we were trying to serve your page. Please bear
-    with us, 
-    = succeed "," do
-      %a{:href => "mailto:#{Nesta::Configuration.author['email']}"} drop us a line
-    or in the mean time, try another page.
+    An error occurred whilst trying to serve your page. Please bear
+    with me. In the mean time, how about trying another page?
+  %p
+    If you're desperate, you can always email me:
+    = succeed "." do
+      %strong= obfuscate Nesta::Configuration.author['email']
   
 #sidebar
   = haml :categories, :layout => false

@@ -6,11 +6,18 @@
       %meta{ "name" => "description", "content" => @description }
     - if @keywords
       %meta{ "name" => "keywords", "content" => @keywords }
+      
+      
+    %link{:rel => "openid.server", :href => "http://www.myopenid.com/server"}/
+    %link{:rel => "openid.delegate", :href => "http://mikesten.myopenid.com/"}/
+    
     %title= @title
     %link{ :href => "/css/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
     %link{ :href => feed_url, :rel => "alternate", :type => "application/atom+xml" }
     %link{ :href => url_for("favicon.ico"), :rel => "shortcut icon", :type => "image/x-icon" }/
     %link{ :href => url_for("favicon.ico"), :rel => "icon", :type => "image/x-icon" }/
+    
+    /%script{:src => "/syncotype.js", :type => "text/javascript"}
     
   %body{ :class => "#{@body_class} #{internet_explorer_class}" }
     #container

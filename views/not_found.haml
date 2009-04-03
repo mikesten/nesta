@@ -7,11 +7,10 @@
 
 #content
   %p
-    Please try another page or, if you think something is wrong with our site,
-    do 
-    %a{:href => "mailto:#{Nesta::Configuration.author['email']}"} get in touch 
-    and let us know.
-
+    Please try another page or, if you think something is wrong with the site,
+    do get in touch and let me know:
+    = succeed "." do
+      %strong= obfuscate Nesta::Configuration.author['email']
 
 #sidebar
   = haml :categories, :layout => false

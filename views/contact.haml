@@ -7,4 +7,4 @@
   %p
     You can get me on
     = succeed "." do
-      %a{:href => "mailto:#{Nesta::Configuration.author['email']}"} &#x77;&#x65;&#98;&#115;&#x69;&#116;&#101;&#x40;&#x64;&#x6f;&#110;&#x6f;&#116;&#114;&#x65;&#x6d;&#x6f;&#x76;&#101;&#46;&#x63;&#x6f;&#x2e;&#117;&#107;
+      %strong= obfuscate Nesta::Configuration.author['email']
