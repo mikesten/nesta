@@ -25,7 +25,7 @@ helpers do
   def set_common_variables
     @categories = Category.find_all
     @site_title = Nesta::Configuration.title
-    @google_analytics_code = Nesta::Configuration.google_analytics_code
+    @google_analytics_code = "UA-360581-1" #Nesta::Configuration.google_analytics_code
   end
 
   def article_path(article)
