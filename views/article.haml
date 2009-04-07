@@ -17,14 +17,23 @@
 #content
   ~ @article.body
 
-  - unless @article.categories.empty?
-    .categories
-      Filed under
-      - @article.categories.each do |category|
-        %a{ :href => category_path(category) }= category.heading
+  %div#ads
+    %script{:type => "text/javascript"}
+      google_ad_client = "pub-2677099488638518";
+      google_ad_slot = "5442084150";
+      google_ad_width = 468;
+      google_ad_height = 60;
+    %script{:type => "text/javascript", :src => "http://pagead2.googlesyndication.com/pagead/show_ads.js"}
 
-  = haml :social, :layout => false
-  = haml :feed, :locals => { :title => @site_title }, :layout => false
+  %div#meta
+    - unless @article.categories.empty?
+      %p
+        Filed under
+        - @article.categories.each do |category|
+          %a{ :href => category_path(category) }= category.heading
+
+    = haml :social, :layout => false
+    = haml :feed, :locals => { :title => @site_title }, :layout => false
 
   - unless @comments.empty?
     .old-comments
@@ -43,13 +52,6 @@
               #{comment.body}
       %p
         Comments are no longer allowed on articles.
-  %div#ads
-    %script{:type => "text/javascript"}
-      google_ad_client = "pub-2677099488638518";
-      google_ad_slot = "5442084150";
-      google_ad_width = 468;
-      google_ad_height = 60;
-    %script{:type => "text/javascript", :src => "http://pagead2.googlesyndication.com/pagead/show_ads.js"}
 #sidebar
   = haml :categories, :layout => false
   = haml :feed, :layout => false

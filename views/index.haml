@@ -5,7 +5,7 @@
 #content
   - @articles.each do |article|
     = haml :summary, :layout => false, :locals => { :article => article, :heading => :h2 }
-  = pagination
+  %p.pagination= pagination
 
 #sidebar
   = haml :categories, :layout => false
