@@ -148,6 +148,7 @@ get Nesta::Configuration.articles_matcher do
   @description = @article.description
   @keywords = @article.keywords
   @comments = @article.comments
+  @recent = Article.find_all[0..5]
   @nav = :weblog
   cache haml(:article)
 end

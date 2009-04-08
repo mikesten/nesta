@@ -52,6 +52,12 @@
               #{comment.body}
       %p
         Comments are no longer allowed on articles.
+  %div#recent
+    %h2 Recent posts
+    %ul
+      - @recent.each do |article|
+        %li
+          %a{ :href => article_path(article) }= article.heading
 #sidebar
   = haml :categories, :layout => false
   = haml :feed, :layout => false
