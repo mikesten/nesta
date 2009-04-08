@@ -87,7 +87,7 @@ get "/me" do
   @title = "Mike Stenhouse | donotremove"
   @keywords = "Mike Stenhouse, Me, UX, UI, Design, About"
   @description = "Mike spent several years doing the rounds in various London agencies as a web standards and accessibility specialist, working for clients including Virgin, the BBC, PriceWaterhouse Coopers and Red Bull. In pursuit of a broader interest in how and why people use the web Mike settled into User Experience, helping to conceive and implement effective and usable interfaces for web applications."
-  @about = ['twitter.com/mikesten', 'linkedin.com/in/mikestenhouse', 'slideshare.net/mikesten', 'github.com/mikesten', 'oo5.whatiminto.com/peeps/mikesten', 'flickr.com/mikesten', 'brightkite.com/people/mikesten', 'last.fm/user/mikesten', 'dopplr.com/traveller/mikesten', 'mikesten.mp', 'thenethernet.com/users/mikesten'].sort
+  @about = ['twitter.com/mikesten', 'linkedin.com/in/mikestenhouse', 'slideshare.net/mikesten', 'github.com/mikesten', 'oo5.whatiminto.com/peeps/mikesten', 'flickr.com/mikesten', 'brightkite.com/people/mikesten', 'last.fm/user/mikesten', 'dopplr.com/traveller/mikesten', 'mikesten.mp', 'whobuilt.it/users/714-MikeStenhouse', 'socialwhois.com/mikesten'].sort
   haml :me
 end
 get "/projects" do
