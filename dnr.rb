@@ -12,7 +12,7 @@ get "/" do
 end
 get "/portfolio" do
   set_common_variables
-  @title = "portfolio | donotremove"
+  @title = "portfolio · donotremove"
   @keywords = "web design, user experience design, user interface design, product design, html, xhtml, css, user interface development"
   @description = ""
   @portfolio = [
@@ -76,7 +76,7 @@ get "/portfolio" do
 end
 get "/contact" do
   set_common_variables
-  @title = "contact | donotremove"
+  @title = "contact · donotremove"
   @keywords = ""
   @description = ""
   @nav = :contact
@@ -84,7 +84,7 @@ get "/contact" do
 end
 get "/me" do
   set_common_variables
-  @title = "Mike Stenhouse | donotremove"
+  @title = "Mike Stenhouse · donotremove"
   @keywords = "Mike Stenhouse, Me, UX, UI, Design, About"
   @description = "Mike spent several years doing the rounds in various London agencies as a web standards and accessibility specialist, working for clients including Virgin, the BBC, PriceWaterhouse Coopers and Red Bull. In pursuit of a broader interest in how and why people use the web Mike settled into User Experience, helping to conceive and implement effective and usable interfaces for web applications."
   @about = ['twitter.com/mikesten', 'linkedin.com/in/mikestenhouse', 'slideshare.net/mikesten', 'github.com/mikesten', 'oo5.whatiminto.com/peeps/mikesten', 'flickr.com/mikesten', 'brightkite.com/people/mikesten', 'last.fm/user/mikesten', 'dopplr.com/traveller/mikesten', 'mikesten.mp', 'whobuilt.it/users/714-MikeStenhouse', 'socialwhois.com/mikesten'].sort
@@ -92,7 +92,7 @@ get "/me" do
 end
 get "/projects" do
   set_common_variables
-  @title = "projects | donotremove"
+  @title = "projects · donotremove"
   @keywords = ""
   @description = ""
   @nav = :projects
