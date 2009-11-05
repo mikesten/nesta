@@ -7,10 +7,9 @@
     - if @keywords
       %meta{ "name" => "keywords", "content" => @keywords }
       
-      
     %link{:rel => "openid.server", :href => "http://www.myopenid.com/server"}/
     %link{:rel => "openid.delegate", :href => "http://mikesten.myopenid.com/"}/
-    %meta{:name => "google-site-verification", :content => "gdfOV2WadsB7H8NDeOwyFSHLY1mYsui7iXCwnB8Efuo"}/
+    
     %title= @title
     %link{ :href => "/css/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
     %link{ :href => feed_url, :rel => "alternate", :type => "application/atom+xml" }
