@@ -16,10 +16,12 @@ get "/portfolio" do
   @keywords = "web design, user experience design, user interface design, product design, html, xhtml, css, user interface development"
   @description = ""
   @portfolio = [
+    {:name => "You Might Not Know, Merobe", :date => "02/10", :kind => :product, :role => "Designer and Developer", :skills => "Ruby, XHTML, CSS, Product Design, Strategy"},
     {:name => "Stories and Experience, TEDx Newcastle", :date => "09/09", :kind => :conference, :role => "Speaker", :skills => "Design and Psychology"},
-    {:name => "QIF Converter", :date => "09/09", :kind => :product, :role => "Designer and Developer", :skills => "Ruby, XHTML, CSS"},
-    {:name => "F&CO Advice Map", :date => "05/09", :kind => :product, :role => "Designer and Developer", :skills => "Ruby, Javascript"},
-    {:name => "Frankenstory", :date => "04/09", :kind => :product, :role => "Developer", :skills => "Ruby, XHTML, CSS, Javascript, Product Design, Strategy"},
+    {:name => "Frankenlab, Mike Suz and Tone too", :date => "10/09", :kind => :product, :role => "Developer", :skills => "PHP, XHTML, CSS"},
+    {:name => "QIF Converter, Donotremove", :date => "09/09", :kind => :product, :role => "Designer and Developer", :skills => "Ruby, XHTML, CSS"},
+    {:name => "F&CO Advice Map, Donotremove", :date => "05/09", :kind => :product, :role => "Designer and Developer", :skills => "Ruby, Javascript"},
+    {:name => "Frankenstory, Mike Suz and Tone too", :date => "04/09", :kind => :product, :role => "Developer", :skills => "Ruby, XHTML, CSS, Javascript, Product Design, Strategy"},
     {:name => "Persuasive Design, Iceweb 2008", :date => "11/08", :kind => :conference, :role => "Speaker", :skills => "Design and Psychology"},
     {:name => "Tapping the Mainline, SHiFT 2008", :date => "10/08", :kind => :conference, :role => "Speaker", :skills => "Design and Psychology"},
     {:name => "From Ego to Ergo, Skillswap", :date => "07/08", :kind => :conference, :role => "Speaker", :skills => "Design and Psychology"},
